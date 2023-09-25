@@ -1,0 +1,232 @@
+<mxfile host="app.diagrams.net" modified="2023-09-03T14:17:13.617Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="nTRsP7mQ-lLLjIpoIqfH" version="21.6.6" type="device" pages="3">
+  <diagram name="Rating" id="g_Z2aBa1QNMwCzAYfO3_">
+    <mxGraphModel dx="880" dy="484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9KbrASApdWdpilMqMg0--3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="L1qMGRlnSPdhny263nHp-2" target="9KbrASApdWdpilMqMg0--2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-2" value="Начало" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="200" y="90" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-3" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="80" width="30" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-4" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="L1qMGRlnSPdhny263nHp-2" target="L1qMGRlnSPdhny263nHp-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="130" as="sourcePoint" />
+            <mxPoint x="480" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-5" value="Вход: inserted, deleted - виртуальные таблицы, содержащая только вставленные, удаленные строки соответственно" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="430" y="90" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="L1qMGRlnSPdhny263nHp-9" target="L1qMGRlnSPdhny263nHp-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-9" value="Получение полки, на которой произошло обновление, путем пересечения таблиц insdel и Bookshelf по id" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="290" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="L1qMGRlnSPdhny263nHp-13" target="L1qMGRlnSPdhny263nHp-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-13" value="Вычисление среднего рейтинга книг на данной полке" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="390" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="L1qMGRlnSPdhny263nHp-15" target="L1qMGRlnSPdhny263nHp-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="L1qMGRlnSPdhny263nHp-15" target="L1qMGRlnSPdhny263nHp-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-15" value="&lt;br&gt;Вычисленный cредний рейтинг - Null?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="490" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="L1qMGRlnSPdhny263nHp-17" target="L1qMGRlnSPdhny263nHp-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-17" value="Установка текущего обрабатываемого значения равного 0" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="350" y="560" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-19" value="Да" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="384" y="510" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="L1qMGRlnSPdhny263nHp-20" target="L1qMGRlnSPdhny263nHp-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-20" value="Установка текущего обрабатываемого значения равного вычисленного среднего рейтинга" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" y="560" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="L1qMGRlnSPdhny263nHp-22" target="L1qMGRlnSPdhny263nHp-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-22" value="Округление текущего обрабатываемого значения до 2 знаков после запятой" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="690" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="L1qMGRlnSPdhny263nHp-25" target="L1qMGRlnSPdhny263nHp-27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-25" value="Присвоение среднему рейтингу данной книжной полки округленного текущего обрабатываемого значения" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="790" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="L1qMGRlnSPdhny263nHp-27" value="Конец" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="200" y="890" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9KbrASApdWdpilMqMg0--4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="9KbrASApdWdpilMqMg0--2" target="L1qMGRlnSPdhny263nHp-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9KbrASApdWdpilMqMg0--2" value="Создание объединения таблиц inserted и deleted - insdel" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="190" width="170" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Rating_2" id="JE-cv-T0mhGPAoJJVnr-">
+    <mxGraphModel dx="880" dy="484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-0" />
+        <mxCell id="zBeGPngDplaSeiiLtx-u-1" parent="zBeGPngDplaSeiiLtx-u-0" />
+        <mxCell id="zBeGPngDplaSeiiLtx-u-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-3" target="zBeGPngDplaSeiiLtx-u-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-3" value="Начало" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="200" y="90" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-4" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="410" y="80" width="30" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-5" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-3" target="zBeGPngDplaSeiiLtx-u-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="130" as="sourcePoint" />
+            <mxPoint x="480" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-6" value="Вход: inserted, deleted - виртуальные таблицы, содержащая только вставленные, удаленные строки соответственно" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="430" y="90" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-8" target="zBeGPngDplaSeiiLtx-u-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-8" value="Получение полки, на которой произошло обновление, путем пересечения таблиц insdel и Bookshelf по id" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="200" y="290" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GFWDTROp0IKVODB0bEOc-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-10" target="GFWDTROp0IKVODB0bEOc-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-10" value="Вычисление среднего рейтинга книг на данной полке" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="200" y="390" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-13" target="zBeGPngDplaSeiiLtx-u-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-13" target="zBeGPngDplaSeiiLtx-u-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-13" value="&lt;br&gt;Вычисленный cредний рейтинг - Null?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="600" y="190" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-15" target="zBeGPngDplaSeiiLtx-u-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-15" value="Установка текущего обрабатываемого значения равного 0" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="750" y="260" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-16" value="Да" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="784" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-18" target="zBeGPngDplaSeiiLtx-u-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-18" value="Установка текущего обрабатываемого значения равного вычисленного среднего рейтинга" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="450" y="260" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-20" target="zBeGPngDplaSeiiLtx-u-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-20" value="Округление текущего обрабатываемого значения до 2 знаков после запятой" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="600" y="390" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-22" target="zBeGPngDplaSeiiLtx-u-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-22" value="Присвоение среднему рейтингу данной книжной полки округленного текущего обрабатываемого значения" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="600" y="490" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-23" value="Конец" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="600" y="590" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="zBeGPngDplaSeiiLtx-u-25" target="zBeGPngDplaSeiiLtx-u-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zBeGPngDplaSeiiLtx-u-25" value="Создание объединения таблиц inserted и deleted - insdel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="200" y="190" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GFWDTROp0IKVODB0bEOc-0" value="А" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="245" y="490" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GFWDTROp0IKVODB0bEOc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="zBeGPngDplaSeiiLtx-u-1" source="GFWDTROp0IKVODB0bEOc-2" target="zBeGPngDplaSeiiLtx-u-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GFWDTROp0IKVODB0bEOc-2" value="А" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="zBeGPngDplaSeiiLtx-u-1">
+          <mxGeometry x="645" y="90" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5P_hVmua1tHh35tIu5-n" name="Number">
+    <mxGraphModel dx="880" dy="484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BjzjpZQNGXx9uEzgms64-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="BjzjpZQNGXx9uEzgms64-2" target="BjzjpZQNGXx9uEzgms64-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjzjpZQNGXx9uEzgms64-2" value="Начало" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="90" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BjzjpZQNGXx9uEzgms64-3" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="80" width="30" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="BjzjpZQNGXx9uEzgms64-4" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="BjzjpZQNGXx9uEzgms64-2" target="BjzjpZQNGXx9uEzgms64-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="130" as="sourcePoint" />
+            <mxPoint x="480" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjzjpZQNGXx9uEzgms64-5" value="Вход: inserted, deleted - виртуальные таблицы, содержащая только вставленные, удаленные строки соответственно" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="90" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BjzjpZQNGXx9uEzgms64-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="BjzjpZQNGXx9uEzgms64-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="285" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjzjpZQNGXx9uEzgms64-7" value="Инкремент значения Number для данной полки" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="290" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BjzjpZQNGXx9uEzgms64-21" value="Конец" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="590" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BjzjpZQNGXx9uEzgms64-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="BjzjpZQNGXx9uEzgms64-23" target="BjzjpZQNGXx9uEzgms64-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjzjpZQNGXx9uEzgms64-23" value="Получение полки, на которой произошло обновление, путем пересечения таблиц inserter и Bookshelf по id" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="190" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tKwdGOn1j5TB-wnQF-qD-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="tKwdGOn1j5TB-wnQF-qD-1" target="tKwdGOn1j5TB-wnQF-qD-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tKwdGOn1j5TB-wnQF-qD-1" value="Получение полки, на которой произошло обновление, путем пересечения таблиц deleted и Bookshelf по id" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="390" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tKwdGOn1j5TB-wnQF-qD-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="tKwdGOn1j5TB-wnQF-qD-3" target="BjzjpZQNGXx9uEzgms64-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tKwdGOn1j5TB-wnQF-qD-3" value="Декремент значения Number для данной полки" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="490" width="170" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

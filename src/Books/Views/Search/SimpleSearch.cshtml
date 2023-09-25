@@ -1,0 +1,23 @@
+﻿@model string
+
+<div class="center-container">
+
+	<h2>Поиск</h2>
+
+	@if (TempData["ErrorMessage"] != null)
+	{
+		<div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+	}
+
+	<form asp-action="SimpleSearch" asp-controller="Search">
+		<div class="form-group">
+			<input class="form"
+				   name="name"
+				   value="@Model"
+				   placeholder="Введите название произведения, книжной серии или имя автора..."
+				   type="text">
+		</div>
+		<button type="submit" class="btn button">Найти</button>
+
+	</form>
+</div>

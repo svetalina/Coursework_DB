@@ -1,0 +1,214 @@
+﻿@using Books.ViewModels
+@model SearchDisplayViewModel
+
+<h2>Результаты поиска</h2>
+
+<div class="center-text">
+<div id="error-container"> </div>
+</div>
+
+@if (Model.Author != null && Model.Author.Any())
+{
+	<h3>Авторы:</h3>
+	<table class="table-custom">
+		<thead>
+			<tr>
+				@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+				{
+					<th>ID</th>
+				}
+				<th>Имя</th>
+				<th>Основной жанр</th>
+				@if (User.Identity.IsAuthenticated)
+				{
+					<th>Год рождения</th>
+					<th>Год смерти</th>
+				}
+				<th>Страна проживания</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var author in Model.Author)
+			{
+				<tr>
+					@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+					{
+						<td>@author.Id</td>
+					}
+					<td>@author.Name</td>
+					<td>@author.Genre</td>
+					@if (User.Identity.IsAuthenticated)
+					{
+						<td>@author.YearBirth</td>
+						<td>@author.YearDeath</td>
+					}
+					<td>@author.Country</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@if (Model.Book != null && Model.Book.Any())
+{
+	<h3>Книги:</h3>
+	<table class="table-custom">
+		<thead>
+			<tr>
+				@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+				{
+					<th>ID</th>
+				}
+				<th>Название</th>
+				<th>Основной жанр</th>
+				@if (User.Identity.IsAuthenticated)
+				{
+					<th>Язык оригинала</th>
+					<th>Год выпуска</th>
+				}
+				<th>Рейтинг</th>
+				@if (Model.AuthorName != null)
+				{
+					<th>Имя автора</th>
+				}
+
+				@if (Model.SeriesName != null)
+				{
+					<th>Название книжной серии</th>
+				}
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var book in Model.Book)
+			{
+				<tr>
+					@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+					{
+						<td>@book.Id</td>
+					}
+					<td>@book.Name</td>
+					<td>@book.Genre</td>
+					@if (User.Identity.IsAuthenticated)
+					{
+						<td>@book.Language</td>
+						<td>@book.Year</td>
+					}
+					<td>@book.Rating</td>
+
+					@if (Model.AuthorName != null)
+					{
+						<td>@Model.AuthorName</td>
+					}
+
+					@if (Model.SeriesName != null)
+					{
+						<td>@Model.SeriesName</td>
+					}
+
+					@if (User.Identity.IsAuthenticated)
+					{
+						<td>
+							<form id="addBookForm-@book.Id" asp-action="AddBook" asp-controller="Bookshelf" method="post" class="text-center">
+								<input type="hidden" name="idBook" value="@book.Id" />
+								<button type="button" id="addButton-@book.Id" class="btn button mx-auto" onclick="addBookAndDisableButton(@book.Id)">Добавить на книжную полку</button>
+							</form>
+						</td>
+					}
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@if (Model.Series != null && Model.Series.Any())
+{
+	<h3>Книжные серии:</h3>
+	<table class="table-custom">
+		<thead>
+			<tr>
+				@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+				{
+					<th>ID</th>
+				}
+				<th>Название</th>
+				<th>Основной жанр</th>
+				@if (User.Identity.IsAuthenticated)
+				{
+					<th>Издательство</th>
+					<th>Год первого выпуска</th>
+				}
+				<th>Рейтинг</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var series in Model.Series)
+			{
+				<tr>
+					@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+					{
+						<td>@series.Id</td>
+					}
+					<td>@series.Name</td>
+					<td>@series.Genre</td>
+					@if (User.Identity.IsAuthenticated)
+					{
+						<td>@series.Publisher</td>
+						<td>@series.Year</td>
+					}
+					<td>@series.Rating</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@if ((Model.Book == null || !Model.Book.Any()) &&
+		(Model.Author == null || !Model.Author.Any()) &&
+		(Model.Series == null || !Model.Series.Any()))
+{
+	<p>Ничего не найдено...</p>
+}
+
+<script>
+	function addBookAndDisableButton(bookId) {
+		disableButton(bookId); // Вызываем функцию disableButton сначала
+		addBook(bookId); // Затем вызываем функцию addBook
+	}
+
+	function addBook(bookId) {
+		const formData = {
+			idBook: bookId,
+		};
+
+		$.ajax({
+			type: "POST",
+			url: "/Bookshelf/AddBook",
+			data: formData,
+			success: function (response) {
+				// Обработка успешного ответа, если нужно
+				if (response.success) {
+					console.log(response.message); // Выводим сообщение об успешном добавлении
+					// Можете выполнить другие действия, например, обновить информацию на странице
+				} else {
+					showError(response.message); // Вызываем функцию showError с сообщением об ошибке
+				}
+			},
+			error: function (error) {
+				// Обработка ошибки, если нужно
+				console.error(error);
+				showError("Произошла ошибка при выполнении запроса."); // Здесь можно отобразить общее сообщение об ошибке AJAX запроса
+			}
+		});
+	}
+
+	function disableButton(bookId) {
+		const addButton = document.getElementById(`addButton-${bookId}`);
+		addButton.classList.add("disabled");
+	}
+
+	function showError(errorMessage) {
+		const errorContainer = document.getElementById('error-container');
+		errorContainer.innerHTML = '<div class="alert alert-danger">' + errorMessage + '</div>';
+	}
+</script>

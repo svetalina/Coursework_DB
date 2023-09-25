@@ -1,0 +1,62 @@
+﻿@using Books.ViewModels
+@model UpdateBookViewModel
+
+<body>
+
+	<h2>Книги:</h2>
+
+	@if (TempData["ErrorMessage"] != null)
+	{
+		<div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+	}
+
+	<table class="table-custom">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Название</th>
+				<th>Основной жанр</th>
+				<th>Язык оригинала</th>
+				<th>Год выпуска</th>
+				<th>Рейтинг</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var book in Model.Books)
+			{
+				<form asp-action="UpdateBook" asp-controller="Admin" method="post">
+				<tr>
+					<td>@book.Id</td>
+					<input type="hidden" asp-for="Book.Id" value="@book.Id" />
+
+					<td>@book.Name</td>
+					<input type="hidden" asp-for="Book.Name" value="@book.Name" />
+
+					<td>
+						<input class="admin-input" asp-for="Book.Genre" value="@book.Genre">
+					</td>
+
+					<td>
+						<input class="admin-input" asp-for="Book.Language" value="@book.Language">
+					</td>
+
+					<td>
+						<input class="admin-input" asp-for="Book.Year" value="@book.Year">
+					</td>
+
+					<td>
+						<input class="admin-input" asp-for="Book.Rating" value="@book.Rating">
+					</td>
+					
+					<td>
+						<button type="submit" class="btn button">Изменить</button>
+					</td>
+				</tr>
+				</form>
+			}
+		</tbody>
+	</table>
+</body>
+
+

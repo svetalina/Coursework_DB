@@ -1,0 +1,100 @@
+﻿@using Books.ViewModels
+@model AuthorSearchViewModel
+
+<div class="advancedSearch-container">
+	<div class="advancedSearch-inner-container">
+		<h2>Расширенный поиск авторов</h2>
+
+		@if (TempData["ErrorMessage"] != null)
+		{
+			<div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+		}
+
+		<form asp-action="AuthorSearch" asp-controller="Search">
+			<div class="form-group">
+				<input class="form"
+					   asp-for="Author.Name"
+					   placeholder="Имя"
+					   type="text">
+			</div>
+
+			<div class="form-group">
+				<input class="form"
+					   asp-for="Author.Genre"
+					   placeholder="Основной жанр"
+					   type="text">
+			</div>
+		
+			@if (User.Identity.IsAuthenticated)
+			{
+				<div class="form-group">
+					<input class="form"
+						   asp-for="Author.YearBirth"
+						   placeholder="Год рождения"
+						   type="text">
+				</div>
+
+				<div class="form-group">
+					<label>Параметры года рождения:</label>
+
+					<label class="toggle">
+						<input type="radio" asp-for="YearBirthFlag" value="More" />
+						<span class="checkmark"></span>
+					</label>
+					<label>Больше</label>
+
+					<label class="toggle">
+						<input type="radio" asp-for="YearBirthFlag" value="Less" />
+						<span class="checkmark"></span>
+					</label>
+					<label>Меньше</label>
+
+					<label class="toggle">
+						<input type="radio" asp-for="YearBirthFlag" value="Equal" />
+						<span class="checkmark"></span>
+					</label>
+					<label>Равно</label>
+				</div>
+
+				<div class="form-group">
+					<input class="form"
+						   asp-for="Author.YearDeath"
+						   placeholder="Год смерти"
+						   type="text">
+				</div>
+
+				<div class="form-group">
+					<label>Параметры года смерти:</label>
+
+					<label class="toggle">
+						<input type="radio" asp-for="YearDeathFlag" value="More" />
+						<span class="checkmark"></span>
+					</label>
+					<label>Больше</label>
+
+					<label class="toggle">
+						<input type="radio" asp-for="YearDeathFlag" value="Less" />
+						<span class="checkmark"></span>
+					</label>
+					<label>Меньше</label>
+
+					<label class="toggle">
+						<input type="radio" asp-for="YearDeathFlag" value="Equal" />
+						<span class="checkmark"></span>
+					</label>
+					<label>Равно</label>
+				</div>
+			}
+
+			<div class="form-group">
+				<input class="form"
+					   asp-for="Author.Country"
+					   placeholder="Страна проживания"
+					   type="text">
+			</div>
+
+			<button type="submit" class="btn button">Найти</button>
+		</form>
+	</div>
+</div>
+

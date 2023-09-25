@@ -1,0 +1,56 @@
+﻿@using Books.ViewModels
+@model UpdateUserViewModel
+
+<body>
+
+	<h2>Пользователи:</h2>
+
+	@if (TempData["ErrorMessage"] != null)
+	{
+		<div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+	}
+
+	<table class="table-custom">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Логин</th>
+				<th>Права доступа</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var user in Model.Users)
+			{
+				<form asp-action="UpdateUser" asp-controller="Admin" method="post">
+					<tr>
+						@if (User.Identity.Name != user.Login)
+						{
+							<td>@user.Id</td>
+							<input type="hidden" asp-for="User.Id" value="@user.Id" />
+
+							<td>@user.Login</td>
+							<input type="hidden" asp-for="User.Login" value="@user.Login" />
+
+							<input type="hidden" asp-for="User.Password" value="@user.Password" />
+
+							<td>
+								<select class="admin-input" asp-for="User.Permission">
+									<option value="admin" selected="@(user.Permission == "admin")">Администратор</option>
+									<option value="user" selected="@(user.Permission == "user")">Пользователь</option>
+								</select>
+
+							</td>
+
+							<td>
+								<button type="submit" class="btn button">Изменить</button>
+						</td>
+						}
+					</tr>
+					</form>
+						}
+			</tbody>
+		</table>
+	</body>
+
+

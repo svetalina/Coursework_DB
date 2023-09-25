@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - Books</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<div class="container-fluid">
+				<a class="navbar-brand" asp-controller="Search" asp-action="SimpleSearch">Books</a>
+
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-controller="Search" asp-action="SimpleSearch">Поиск</a>
+						</li>
+						<li class="nav-item">
+							<div class="dropdown">
+								<a class="nav-link text-dark">Расширенный поиск</a>
+								<div class="dropdown-content">
+									<a asp-controller="Search" asp-action="AuthorSearch" class="dropdown-link">Авторы</a>
+									<a asp-controller="Search" asp-action="BookSearch" class="dropdown-link">Книги</a>
+									<a asp-controller="Search" asp-action="SeriesSearch" class="dropdown-link">Книжные серии</a>
+								</div>
+							</div>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Регистрация</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Вход</a>
+						</li>
+					</ul>
+				</div>
+				@if (User.Identity.IsAuthenticated)
+				{
+					<button id="toggleSidebar" class="btn button ml-auto d-block">Личный кабинет</button>
+				}
+			</div>
+		</nav>
+	</header>
+
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
+
+	<div class="sidebar">
+		<div class="sidebar-menu">
+
+			<button id="closeSidebar" class="btn button-arrow">
+				<img src="/img/arrow.png" style="width: 40px; height: 25px;">
+			</button>
+
+			<ul>
+				<li><a asp-controller="Bookshelf" asp-action="Display">Моя книжная полка</a></li>
+				<li><a asp-controller="Account" asp-action="ChangePassword">Настройки</a></li>
+
+				@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+				{
+					<li><a asp-controller="Admin" asp-action="Add">Добавление</a></li>
+					<li><a asp-controller="Admin" asp-action="UpdateBook">Изменение книг</a></li>
+					<li><a asp-controller="Admin" asp-action="UpdateUser">Изменение пользователей</a></li>
+				}
+			</ul>
+		
+			<form method="post"  asp-controller="Account" asp-action="Logout">
+				<button type="submit" class="btn button button-equal">Выйти</button>
+			</form>
+
+			<form method="post" asp-controller="Account" asp-action="DeleteUser">
+				<button type="submit" class="btn button button-equal-red">Удалить аккаунт</button>
+			</form>
+
+		</div>
+	</div>
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const toggleSidebarButton = document.getElementById('toggleSidebar');
+			const closeSidebarButton = document.getElementById('closeSidebar');
+			const sidebar = document.querySelector('.sidebar');
+
+			toggleSidebarButton.addEventListener('click', function () {
+				sidebar.classList.toggle('open');
+			});
+
+			closeSidebarButton.addEventListener('click', function () {
+				sidebar.classList.remove('open');
+			});
+		});
+	</script>
+
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,128 @@
+﻿@using Books.ViewModels
+@model AddViewModel
+
+<body>
+
+	@if (TempData["ErrorMessage"] != null)
+	{
+		<div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+	}
+
+	<h2>Добавление книги:</h2>
+
+	<table class="table-custom">
+		<thead>
+			<tr>
+				<th>Название</th>
+				<th>Основной жанр</th>
+				<th>Язык оригинала</th>
+				<th>Год выпуска</th>
+				<th>Рейтинг</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<form asp-action="Add" asp-controller="Admin" method="post">
+			<tr>
+				<td>
+					<input class="admin-input" asp-for="Book.Name">
+				</td>
+
+				<td>
+					<input class="admin-input" asp-for="Book.Genre">
+				</td>
+
+				<td>
+					<input class="admin-input" asp-for="Book.Language">
+				</td>
+
+				<td>
+					<input class="admin-input" asp-for="Book.Year">
+				</td>
+
+				<td>
+					<input class="admin-input" asp-for="Book.Rating">
+				</td>
+
+				<td>
+					<button type="submit" class="btn button">Добавить</button>
+				</td>
+			</tr>
+			</form>
+		</tbody>
+	</table>
+
+	<h2>Добавление автора:</h2>
+
+	<table class="table-custom">
+		<thead>
+			<tr>
+				<th>Имя</th>
+				<th>Основной жанр</th>
+				<th>Год рождения</th>
+				<th>Год смерти</th>
+				<th>Страна проживания</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<form asp-action="Add" asp-controller="Admin" method="post">
+			<tr>
+				<td>
+					<input class="admin-input" asp-for="Author.Name">
+				</td>
+
+				<td>
+					<input class="admin-input" asp-for="Author.Genre">
+				</td>
+
+				<td>
+					<input class="admin-input" asp-for="Author.YearBirth">
+				</td>
+
+				<td>
+					<input class="admin-input" asp-for="Author.YearDeath">
+				</td>
+
+				<td>
+					<input class="admin-input" asp-for="Author.Country">
+				</td>
+
+				<td>
+					<button type="submit" class="btn button">Добавить</button>
+				</td>
+			</tr>
+			</form>
+		</tbody>
+	</table>
+
+	<h2>Добавление связи книга-автор:</h2>
+
+	<table class="table-custom">
+		<thead>
+			<tr>
+				<th>ID книги</th>
+				<th>ID автора</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<form asp-action="Add" asp-controller="Admin" method="post">
+			<tr>
+				<td>
+					<input class="admin-input" asp-for="BookAuthor.IdBook">
+				</td>
+
+				<td>
+					<input class="admin-input" asp-for="BookAuthor.IdAuthor">
+				</td>
+
+				<td>
+					<button type="submit" class="btn button">Добавить</button>
+				</td>
+			</tr>
+			</form>
+		</tbody>
+	</table>
+</body>
+

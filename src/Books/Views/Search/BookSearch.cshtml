@@ -1,0 +1,114 @@
+﻿@using Books.ViewModels
+@model BookSearchViewModel
+
+<div class="advancedSearch-container">
+	<div class="advancedSearch-inner-container">
+		<h2>Расширенный поиск книг</h2>
+
+		@if (TempData["ErrorMessage"] != null)
+		{
+			<div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+		}
+
+		<form asp-action="BookSearch" asp-controller="Search">
+			<div class="form-group">
+				<input class="form"
+					   asp-for="Book.Name"
+					   placeholder="Название"
+					   type="text">
+			</div>
+			<div class="form-group">
+				<input class="form"
+					   asp-for="Book.Genre"
+					   placeholder="Основной жанр"
+					   type="text">
+			</div>
+			@if (User.Identity.IsAuthenticated)
+			{
+				<div class="form-group">
+					<input class="form"
+						   asp-for="Book.Language"
+						   placeholder="Язык оригинала"
+						   type="text">
+				</div>
+
+				<div class="form-group">
+					<input class="form"
+						   asp-for="Book.Year"
+						   placeholder="Год выпуска"
+						   type="text">
+				</div>
+
+				<div class="form-group">
+					<label>Параметры года выпуска:</label>
+
+					<label class="toggle">
+						<input type="radio" asp-for="YearFlag" value="More" />
+						<span class="checkmark"></span>
+					</label>
+					<label>Больше</label>
+
+					<label class="toggle">
+						<input type="radio" asp-for="YearFlag" value="Less" />
+						<span class="checkmark"></span>
+					</label>
+					<label>Меньше</label>
+
+					<label class="toggle">
+						<input type="radio" asp-for="YearFlag" value="Equal" />
+						<span class="checkmark"></span>
+					</label>
+					<label>Равно</label>
+				</div>
+			}
+
+			<div class="form-group">
+				<input class="form"
+					   asp-for="Book.Rating"
+					   placeholder="Рейтинг"
+					   type="text">
+			</div>
+
+			<div class="form-group">
+				<label>Параметры рейтинга:</label>
+
+				<label class="toggle">
+					<input type="radio" asp-for="RatingFlag" value="More" />
+					<span class="checkmark"></span>
+				</label>
+				<label>Больше</label>
+
+				<label class="toggle">
+					<input type="radio" asp-for="RatingFlag" value="Less" />
+					<span class="checkmark"></span>
+				</label>
+				<label>Меньше</label>
+
+				<label class="toggle">
+					<input type="radio" asp-for="RatingFlag" value="Equal" />
+					<span class="checkmark"></span>
+				</label>
+				<label>Равно</label>
+			</div>
+
+			@if (User.Identity.IsAuthenticated)
+			{
+				<div class="form-group">
+					<input class="form"
+						   asp-for="AuthorName"
+						   placeholder="Имя автора"
+						   type="text">
+				</div>
+
+				<div class="form-group">
+					<input class="form"
+						   asp-for="SeriesName"
+						   placeholder="Название книжной серии"
+						   type="text">
+				</div>
+			}
+
+			<button type="submit" class="btn button">Найти</button>
+		</form>
+	</div>
+</div></

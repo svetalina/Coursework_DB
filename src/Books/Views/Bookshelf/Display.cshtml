@@ -1,0 +1,55 @@
+﻿@using Books.ViewModels
+@model BookshelfDisplayViewModel
+
+<body>
+
+	@if (TempData["ErrorMessage"] != null)
+	{
+		<div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+	}
+
+	<div class="bookshelf-text">
+		<div class="text">Количество книг: @Model.Bookshelf.Number</div>
+		<div class="text">Средний ретинг: @Model.Bookshelf.Rating</div>
+	</div>
+
+	<div class="book-container">
+		@foreach (var book in Model.Books)
+		{
+			<div class="book-outer-container">
+				<div class="book" style="background-image: url('/img/book.jpg');">
+					<div class="book-text">@book.Book.Name</div>
+					<div class="rating-text">@book.Book.Rating</div>
+					@foreach (var author in book.Authors)
+					{
+						<div class="author-text">@author.Name</div>
+					}
+
+				</div>
+
+				@if (book.IsRead == true)
+				{
+					<div class="read-text">Прочитано</div>
+				}
+
+				<div class="button-container">
+					
+					<form asp-action="DeleteBook" asp-controller="Bookshelf" method="post">
+						<input type="hidden" name="idBookshelf" value="@Model.Bookshelf.Id" />
+						<input type="hidden" name="idBook" value="@book.Book.Id" />
+						<div class="book-button-delete">
+							<button type="submit" class="btn button button-equal-red mx-auto">Удалить</button>
+						</div>
+					</form>
+
+					<form asp-action="ReadBook" asp-controller="Bookshelf" method="post">
+						<input type="hidden" name="idBookshelf" value="@Model.Bookshelf.Id" />
+						<input type="hidden" name="idBook" value="@book.Book.Id" />
+						<div class="book-button-read">
+							<button type="submit" class="btn button button-equal mx-auto" style="display: @(book.IsRead ? "none" : "block")">Прочитать</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		}
+</body>
